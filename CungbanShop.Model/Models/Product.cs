@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 using CungbanShop.Model.Abstract;
+using System.Collections.Generic;
 
 namespace CungbanShop.Model.Models
 {
@@ -43,5 +44,6 @@ namespace CungbanShop.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
     }
 }

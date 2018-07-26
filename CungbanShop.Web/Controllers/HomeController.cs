@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace CungbanShop.Web.Controllers
 {
-    public class DefaultController : Controller
+    public class HomeController : Controller
     {
-        // GET: Default
+        // GET: Home
         public ActionResult Index()
         {
             return View();

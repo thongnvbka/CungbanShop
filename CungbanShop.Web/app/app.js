@@ -3,6 +3,8 @@
 (function () {
     angular.module('cungbanshop',
         ['cungbanshop.products',
+
+            'cungbanshop.product_categories',
           
             'cungbanshop.common'])
         .config(config);

@@ -19,6 +19,8 @@ namespace CungbanShop.Service
 
         IEnumerable<ProductCategory> GetAll();
 
+        IEnumerable<ProductCategory> GetAll(string keyword);
+
         IEnumerable<ProductCategory> GetAllByParentId(int parentId);
 
         ProductCategory GetById(int id);
@@ -28,10 +30,10 @@ namespace CungbanShop.Service
 
     public class ProductCategoryService : IProductCategoryService
     {
-        private ProductCategoryRepository _ProductCategoryRepository;
-        private UnitOfWork _unitOfWork;
+        private IProductCategoryRepository _ProductCategoryRepository;
+        private IUnitOfWork _unitOfWork;
 
-        public ProductCategoryService(ProductCategoryRepository ProductCategoryRepository, UnitOfWork unitOfWork)
+        public ProductCategoryService(IProductCategoryRepository ProductCategoryRepository, IUnitOfWork unitOfWork)
         {
             this._ProductCategoryRepository = ProductCategoryRepository;
             this._unitOfWork = unitOfWork;
@@ -50,6 +52,14 @@ namespace CungbanShop.Service
         public IEnumerable<ProductCategory> GetAll()
         {
             return _ProductCategoryRepository.GetAll();
+        }
+
+        public IEnumerable<ProductCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            else
+                return _ProductCategoryRepository.GetAll();
         }
 
         public IEnumerable<ProductCategory> GetAllByParentId(int parentId)

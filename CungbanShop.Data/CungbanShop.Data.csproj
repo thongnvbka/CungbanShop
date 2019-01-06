@@ -39,6 +39,9 @@
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -73,6 +76,14 @@
     <Compile Include="Migrations\201804250230428_Intergrate-AspnetIdentity.cs" />
     <Compile Include="Migrations\201804250230428_Intergrate-AspnetIdentity.Designer.cs">
       <DependentUpon>201804250230428_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807261127347_AddIdentity.cs" />
+    <Compile Include="Migrations\201807261127347_AddIdentity.Designer.cs">
+      <DependentUpon>201807261127347_AddIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807291447364_DataProductcategory.cs" />
+    <Compile Include="Migrations\201807291447364_DataProductcategory.Designer.cs">
+      <DependentUpon>201807291447364_DataProductcategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804250230428_Intergrate-AspnetIdentity.resx">
       <DependentUpon>201804250230428_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807261127347_AddIdentity.resx">
+      <DependentUpon>201807261127347_AddIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807291447364_DataProductcategory.resx">
+      <DependentUpon>201807291447364_DataProductcategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

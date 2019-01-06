@@ -10,10 +10,12 @@
     <!-- Bootstrap 3.3.5 -->
     <link href="~/Assets/admin/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
+    <link href="~/Assets/admin/libs/toastr/toastr.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Assets/admin/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
@@ -138,7 +140,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="./Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="/Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
                                         Alexander Pierce - Web Developer
                                         <small>Member since Nov. 2012</small>
@@ -209,7 +211,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a ui-sref="products"><i class="fa fa-circle-o"></i> Products</a></li>
-                            <li><a ui-sref="product_add"><i class="fa fa-circle-o"></i> Add products</a></li>
+                            <li><a ui-sref="product_categories"><i class="fa fa-circle-o"></i> product_category</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -521,9 +523,19 @@
     <!-- Begin embed angularJS -->
     <script src="~/Assets/admin/libs/angular/angular.js"></script>
     <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/Assets/admin/libs/toastr/toastr.js"></script>
     <script src="~/app/shared/modules/cungbanshop.common.js"></script>
+    <script src="~/app/shared/filters/statusFilter.js"></script>
+    <script src="~/app/shared/service/apiService.js"></script>
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
+    <script src="~/app/shared/service/notificationService.js"></script>
+
     <script src="~/app/components/products/products.module.js"></script>
+    <script src="~/app/components/product_categories/productCategories.module.js"></script>
+
     <script src="~/app/app.js"></script>
+    <script src="~/app/components/product_categories/productCategoryListController.js"></script>
+    <script src="~/app/components/product_categories/productCategoryAddController.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
     <script src="~/app/components/products/productListController.js"></script>
     <script src="~/app/components/home/homeController.js"></script>

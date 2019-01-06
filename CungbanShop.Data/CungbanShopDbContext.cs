@@ -1,10 +1,10 @@
 ﻿using CungbanShop.Model.Models;
-
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
 namespace CungbanShop.Data
 {
-    public class CungbanShopDbContext : DbContext
+    public class CungbanShopDbContext : IdentityDbContext <ApplicationUser>
     {
         public CungbanShopDbContext() : base("CungbanShopConnection")
         {
@@ -33,11 +33,18 @@ namespace CungbanShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
 
-      
+        public static CungbanShopDbContext Create()
+        {
+            return new CungbanShopDbContext();
+        }
+
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
 
-         
+
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }

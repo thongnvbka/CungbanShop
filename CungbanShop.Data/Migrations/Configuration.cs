@@ -1,9 +1,10 @@
-namespace CungbanShop.Data.Migrations
+﻿namespace CungbanShop.Data.Migrations
 {
     using CungbanShop.Model.Models;
     using Microsoft.AspNet.Identity;
-    
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -44,6 +45,25 @@ namespace CungbanShop.Data.Migrations
             //    var adminUser = manager.FindByEmail("thongnv.bka@gmail.com");
 
             //    manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+
         }
-    }   }
+
+        private void CreateProductCategorySample(CungbanShop.Data.CungbanShopDbContext context)
+        {
+            if (context.ProductCategories.Count() == 0)
+            {
+                List<ProductCategory> listProductCategory = new List<ProductCategory>()
+                 {
+                new ProductCategory() { Name="Quần áo",Alias="quan-ao",Status=true },
+                 new ProductCategory() { Name="Giày dép",Alias="giay-dep",Status=true },
+                   new ProductCategory() { Name="Mỹ phẩm",Alias="my-pham",Status=true }
+                 };
+                context.ProductCategories.AddRange(listProductCategory);
+                context.SaveChanges();
+            }
+
+        }
+
+    }
+}
 

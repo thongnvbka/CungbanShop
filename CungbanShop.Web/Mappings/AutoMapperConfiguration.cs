@@ -13,18 +13,19 @@ namespace CungbanShop.Web.Mappings
     {
         public static void Configure()
         {
-
-            //Mapper.CreateMap<Post, PostViewModel>();
-            //Mapper.CreateMap<PostCategory, PostCategoryViewModel>();
-            //Mapper.CreateMap<Tag, TagViewModel>();
+            
 
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Post, PostViewModel>();
                 cfg.CreateMap<PostCategory, PostCategoryViewModel>();
                 cfg.CreateMap<Tag, TagViewModel>();
+                cfg.CreateMap<ProductCategory, ProductCategoryViewModel>();
+                cfg.CreateMap<Product, ProductViewModel>();
+                cfg.CreateMap<ProductTag, ProductTagViewModel>();
+
             });
-            
+
         }
     }
 }
